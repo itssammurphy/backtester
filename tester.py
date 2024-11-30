@@ -61,7 +61,7 @@ class StrategyBacktest:
         ) / self.data['stratReturns'].std() * np.sqrt(NUM_TRADING_DAYS)
 
         print(f"Total Returns: {totalReturn:.2%}")
-        print(f"Annualised Returns: {annualReturn:.2%}")
+        # print(f"Annualised Returns: {annualReturn:.2%}")
         print(f"Sharpe: {sharpeRatio:.2f}")
 
     def plot(self):
@@ -77,7 +77,7 @@ class StrategyBacktest:
         # Build the Pyplot figure
         plt.figure(figsize=(12, 6))
         plt.plot(self.data['cumReturns'], label="Strategy")
-        plt.plot(self.data['cumMarket'], label="Market", linestyle="--")
+        plt.plot(self.data['cumMarket'], label="Market", linestyle="dotted")
         plt.title("Equity Curve on Backtest")
         plt.legend()
         plt.show()
